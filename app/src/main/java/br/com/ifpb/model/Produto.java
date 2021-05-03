@@ -1,4 +1,4 @@
-package br.com.ifpb;
+package br.com.ifpb.model;
 
 import java.math.BigDecimal;
 
