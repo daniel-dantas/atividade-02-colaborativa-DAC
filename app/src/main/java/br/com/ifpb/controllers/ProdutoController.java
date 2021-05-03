@@ -32,7 +32,9 @@ public class ProdutoController implements Serializable {
     public List<Produto> listarProdutos(){
         return produtos.listar();
     }
-
+    public List<Produto> listarProdutosPorDescricao(){
+        return produtos.listarProdutoPorDescricao();
+    }
     public Produto getProduto() {
         return produto;
     }

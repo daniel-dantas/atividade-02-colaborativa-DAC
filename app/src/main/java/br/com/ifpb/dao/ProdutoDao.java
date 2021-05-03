@@ -83,12 +83,17 @@ public class ProdutoDao {
         }
     }
 
+    public List<Produto> listarProdutoPorDescricao() {
+    return null;
+    }
 
-    private Produto criarProduto(ResultSet result) throws SQLException {
+        private Produto criarProduto(ResultSet result) throws SQLException {
         String descricao = result.getString("descricao");
         BigDecimal valor = result.getBigDecimal("valor");
         int id = result.getInt("id");
         return new Produto(id, descricao, valor);
     }
+
+
 
 }

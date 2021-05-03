@@ -12,7 +12,7 @@ public class Venda {
     private Cliente cliente;
 
 
-    public void  adicionar(Produto produto){
+    public void adicionar(Produto produto){
         this.carrinho.add(produto);
     }
 
