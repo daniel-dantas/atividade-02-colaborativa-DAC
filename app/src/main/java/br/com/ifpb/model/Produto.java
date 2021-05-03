@@ -1,23 +1,22 @@
 package br.com.ifpb.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Produto {
     private int id;
     private String descricao;
     private BigDecimal valor;
-}
 
-    public Cliente(int id, String descricao, BigDecimal valor) {
+    public Produto() {
+    }
+
+    public Produto(int id, String descricao, BigDecimal valor) {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
     }
 
-    public boolean valido() {
-        return !"".equals(this.valor.trim())
-                && !"".equals(this.descricao.trim());
-    }
 
     public int getId() {
         return id;

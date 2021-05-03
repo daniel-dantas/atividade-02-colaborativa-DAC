@@ -1,7 +1,21 @@
 package br.com.ifpb.dao;
 
-@Stateless
+import br.com.ifpb.model.Produto;
 
+import javax.annotation.Resource;
+import javax.ejb.Stateless;
+import javax.sql.DataSource;
+import java.math.BigDecimal;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+@Stateless
 public class ProdutoDao {
 
     @Resource(lookup = "java:app/jdbc/pgadmin")
@@ -45,7 +59,7 @@ public class ProdutoDao {
             statement.setInt(1, produto.getId());
             statement.executeUpdate();
         } catch (SQLException throwables) {
-            Logger.getLogger(ProdutoDao.class.getDescricao()).log(Level.SEVERE,null,throwables);
+            Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE,null,throwables);
         }
     }
 
@@ -74,7 +88,7 @@ public class ProdutoDao {
         String descricao = result.getString("descricao");
         BigDecimal valor = result.getBigDecimal("valor");
         int id = result.getInt("id");
-        return new Cliente(id,valor,descricao);
+        return new Produto(id, descricao, valor);
     }
 
 }

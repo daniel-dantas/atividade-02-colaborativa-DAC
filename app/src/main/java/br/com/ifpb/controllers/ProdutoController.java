@@ -29,7 +29,7 @@ public class ProdutoController implements Serializable {
         produtos.excluir(produto);
     }
 
-    public List<Produtos> listarProdutos(){
+    public List<Produto> listarProdutos(){
         return produtos.listar();
     }
 
