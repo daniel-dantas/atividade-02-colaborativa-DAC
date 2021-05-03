@@ -16,7 +16,7 @@ public class ProdutoDao {
                             "INSERT INTO produtos (descricao, valor) VALUES(?,?) "
                     );
             statement.setString(1, produto.getDescricao());
-            statement.setString(2, produto.getValor());
+            statement.setBigDecimal(2, produto.getValor());
 
             statement.executeUpdate();
         }catch (SQLException ex) {
@@ -30,7 +30,7 @@ public class ProdutoDao {
                     .getConnection()
                     .prepareStatement("UPDATE produtos SET descricao = ? , valor = ? WHERE id = ?");
             statement.setString(1, produto.getDescricao());
-            statement.setString(2, produto.getValor());
+            statement.setBigDecimal(2, produto.getValor());
             statement.setInt(3,produto.getId());
             statement.executeUpdate();
         } catch (SQLException throwables) {

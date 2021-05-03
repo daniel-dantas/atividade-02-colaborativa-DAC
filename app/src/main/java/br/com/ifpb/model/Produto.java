@@ -8,6 +8,12 @@ public class Produto {
     private BigDecimal valor;
 }
 
+    public Cliente(int id, String descricao, BigDecimal valor) {
+        this.id = id;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
+
     public boolean valido() {
         return !"".equals(this.valor.trim())
                 && !"".equals(this.descricao.trim());
