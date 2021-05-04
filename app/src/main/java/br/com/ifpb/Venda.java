@@ -11,7 +11,6 @@ public class Venda {
     private final List<Produto> carrinho = new ArrayList<>();
     private Cliente cliente;
 
-
     public void adicionar(Produto produto){
         this.carrinho.add(produto);
     }
