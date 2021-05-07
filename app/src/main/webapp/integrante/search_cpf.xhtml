@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:v="http://java.sun.com/jsf/core"
+                template="../template.xhtml">
+    <ui:define name="corpo">
+        <h1>Pesquisa por CPF</h1>
+        <h:form>
+            <h:outputLabel for="search_cpf" value="Seach CPF" />
+            <h:inputText value="#{integranteController.searchCpf}"
+                         id="search_cpf"/>
+            <h:commandButton value="Pesquisar" action="#{integranteController.pesquisarPorCpf()}" class="btn"/>
+            <v:view>
+                <h:outputText rendered="#{integranteController.resultIntegrante != null}" value="#{integranteController.resultIntegrante}" />
+            </v:view>
+        </h:form>
+    </ui:define>
+</ui:composition>

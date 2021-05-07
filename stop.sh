@@ -5,6 +5,6 @@ docker container rm app
 #removendo as images
 docker image rm -f atividadedac/app
 
-# docker container stop  bd
-# docker container rm bd
-# docker image rm -f atividadedac/banco
+docker container stop  bd
+docker container rm bd
+docker image rm -f atividadedac/banco
