@@ -73,7 +73,7 @@ public class ProdutoDao {
                     ).executeQuery();
             while (result.next()) {
                 lista.add(
-                        criarProduto(result)
+                        setProduto(result)
                 );
             }
             return lista;
@@ -84,10 +84,26 @@ public class ProdutoDao {
     }
 
     public List<Produto> listarProdutoPorDescricao() {
-    return null;
+        try {
+            List<Produto> lista = new ArrayList<>();
+            ResultSet result = this.dataSource
+                    .getConnection()
+                    .prepareStatement(
+                            "SELECT * FROM produto WHERE descricao = ?"
+                    ).executeQuery();
+            while (result.next()) {
+                lista.add(
+                        setProduto(result)
+                );
+            }
+            return lista;
+        } catch (SQLException ex) {
+//            Logger.getLogger(ClientesEmJDBC.class.getName()).log(Level.SEVERE,null,ex);
+            return Collections.EMPTY_LIST;
+        }
     }
 
-        private Produto criarProduto(ResultSet result) throws SQLException {
+    private Produto setProduto(ResultSet result) throws SQLException {
         String descricao = result.getString("descricao");
         BigDecimal valor = result.getBigDecimal("valor");
         int id = result.getInt("id");
