@@ -2,9 +2,11 @@ package br.com.ifpb;
 
 import br.com.ifpb.model.Cliente;
 import br.com.ifpb.model.Item;
+import br.com.ifpb.model.Produto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Venda implements Serializable {
@@ -16,12 +18,33 @@ public class Venda implements Serializable {
         this.carrinho.add(item);
     }
 
+    public void incrementar(String produto) {
+        this.carrinho.stream()
+                .filter(item -> item.getProduto().equals(produto))
+                .findFirst()
+                .get()
+                .incrementar();
+    }
+
+    public void decrementar(String produto) {
+        // TODO: verificar se a quantidade ficou igual a zero
+        this.carrinho.stream()
+                .filter(item -> item.getProduto().equals(produto))
+                .findFirst()
+                .get()
+                .decrementar();
+    }
     public void remover(String produto){
         Item item = new Item(produto);
 
         this.carrinho.remove(item);
     }
 
+    public List<Item> itens() {
+        return Collections.unmodifiableList(
+                carrinho
+        );
+    }
     public void finalizar(Cliente cliente) {
         this.cliente = cliente.getNome();
         System.out.println("--- Carrinho de compras ---");
