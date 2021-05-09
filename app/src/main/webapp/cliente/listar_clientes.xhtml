@@ -6,6 +6,25 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <h1>Listar CLientes</h1>
+    <h:form>
+        <h:commandLink class="btn" value="Novo CLiente" action="cadastrar_cliente"/>
+        <h:dataTable var="cliente" value="#{clienteController.listarClientes()}" class="striped highlight">
+            <h:column>
+                <f:facet name="header">Nome</f:facet>
+                #{cliente.nome}
+            </h:column>
+            <h:column>
+                <f:facet name="header">CPF</f:facet>
+                #{cliente.cpf}
+            </h:column>
+            <h:column>
+                <h:commandButton value="Excluir" action="#{clienteController.excluirCLiente(cliente)}" class="btn"/>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Editar" action="#{clienteController.editarCliente(cliente)}" class="btn"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
 </f:view>
 </html>
