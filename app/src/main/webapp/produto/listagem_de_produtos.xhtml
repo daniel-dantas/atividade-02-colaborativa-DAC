@@ -5,9 +5,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<ui:composition template="../template.xhtml">
-   <ui:define name="template">
-      <h1>Listagem de Produtos</h1>
+<ui:composition>
+      <h1>Listar Produtos</h1>
       <h:form>
          <h:commandLink class="btn" value="Novo Produto" action="cadastro_produto"/>
          <h:dataTable var="produto" value="#{produtoController.listarProdutos()}" class="striped highlight">
@@ -30,6 +29,5 @@
             </h:column>
          </h:dataTable>
       </h:form>
-   </ui:define>
 </ui:composition>
 </html>

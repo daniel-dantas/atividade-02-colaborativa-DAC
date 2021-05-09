@@ -5,9 +5,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<ui:composition template="../template.xhtml">
-   <ui:define name="template">
-      <h1>Criar novo Produtos</h1>
+<ui:composition>
+      <h1>Cadastrar Produto</h1>
       <h:form>
          <h:outputLabel for="descricao" value="Descricao" />
          <h:inputText value="#{produtoController.produto.descricao}" id="descricao"/>
@@ -16,6 +15,5 @@
          <h:commandButton id="cadastrar" styleClass="btn" value="Criar Produto" action="#{produtoController.editarProduto(produto))}"/>
       </h:form>
       <h:commandLink class="btn" value="Listar Produtos" action="listagem_de_produtos.xhtml?faces-redirect=true"/>
-   </ui:define>
 </ui:composition>
 </html>

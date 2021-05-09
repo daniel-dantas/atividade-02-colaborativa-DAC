@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:v="http://java.sun.com/jsf/core"
-                template="template.xhtml"
->
-    <ui:define name="corpo">
-        <h1>Hello Docker!</h1>
-    </ui:define>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+        <h1>Bem Vindo ao Home!</h1>
+        <h:form>
+            <h:commandLink class="btn" action="">Cadastro de Cliente</h:commandLink> <br/>
+            <h:commandLink class="btn" action="">Listar de Clientes</h:commandLink> <br/>
+            <h:commandLink class="btn" action="">Cadastro de Produto</h:commandLink> <br/>
+            <h:commandLink class="btn" action="">Listar Produtos</h:commandLink> <br/>
+            <h:commandLink class="btn" action="">Listar Produtos por Descrição</h:commandLink> <br/>
+            <h:commandLink class="btn" action="">Carrinho de Compras</h:commandLink> <br/>
+        </h:form>
 </ui:composition>
+</html>
