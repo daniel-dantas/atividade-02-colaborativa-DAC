@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="../template.xhtml">
+   <ui:define name="template">
+      <h1>Criar novo Produtos</h1>
+      <h:form>
+         <h:outputLabel for="descricao" value="Descricao" />
+         <h:inputText value="#{produtoController.produto.descricao}" id="descricao"/>
+         <h:outputLabel for="valor" value="Preço" />
+         <h:inputText value="#{produtoController.produto.valor}" id="valor" />
+         <h:commandButton id="cadastrar" styleClass="btn" value="Criar Produto" action="#{produtoController.criarProduto()}"/>
+      </h:form>
+      <h:commandLink class="btn" value="Listar Produtos" action="listagem_de_produtos.xhtml?faces-redirect=true"/>
+   </ui:define>
+</ui:composition>
+</html>

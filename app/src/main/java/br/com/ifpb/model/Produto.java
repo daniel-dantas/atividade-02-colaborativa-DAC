@@ -1,9 +1,10 @@
 package br.com.ifpb.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Produto {
+public class Produto implements Serializable {
     private int id;
     private String descricao;
     private BigDecimal valor;
