@@ -1,4 +1,4 @@
-package br.com.ifpb;
+package br.com.ifpb.utils;
 
 import br.com.ifpb.model.Cliente;
 import br.com.ifpb.model.Item;

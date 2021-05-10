@@ -1,6 +1,6 @@
 package br.com.ifpb.controllers;
 
-import br.com.ifpb.CarrinhoDeCompras;
+import br.com.ifpb.utils.CarrinhoDeCompras;
 import br.com.ifpb.model.Cliente;
 import br.com.ifpb.model.Item;
 
