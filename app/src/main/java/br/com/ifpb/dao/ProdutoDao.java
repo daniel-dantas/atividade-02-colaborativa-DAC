@@ -89,7 +89,7 @@ public class ProdutoDao {
             ResultSet result = this.dataSource
                     .getConnection()
                     .prepareStatement(
-                            "SELECT * FROM produto WHERE descricao = ?"
+                            "SELECT * FROM produtos WHERE descricao = ?"
                     ).executeQuery();
             while (result.next()) {
                 lista.add(

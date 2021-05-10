@@ -12,7 +12,7 @@
          <h:outputLabel for="valor" value="Preço" />
          <h:inputText value="#{produtoController.produto.valor}" id="valor" />
          <h:commandButton id="cadastrar" styleClass="btn" value="Criar Produto" action="#{produtoController.criarProduto()}"/>
-      </h:form>
       <h:commandLink class="btn" value="Listar Produtos" action="listagem_de_produtos.xhtml?faces-redirect=true"/>
+      </h:form>
 </ui:composition>
 </html>

@@ -2,8 +2,6 @@ package br.com.ifpb;
 
 import br.com.ifpb.model.Cliente;
 import br.com.ifpb.model.Item;
-import br.com.ifpb.model.Produto;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +11,7 @@ public class Venda implements Serializable {
 
     private final List<Item> carrinho = new ArrayList<>();
     private String cliente;
+
     public void adicionar(String produto){
         Item item = new Item(produto);
         this.carrinho.add(item);
@@ -27,7 +26,6 @@ public class Venda implements Serializable {
     }
 
     public void decrementar(String produto) {
-        // TODO: verificar se a quantidade ficou igual a zero
         this.carrinho.stream()
                 .filter(item -> item.getProduto().equals(produto))
                 .findFirst()

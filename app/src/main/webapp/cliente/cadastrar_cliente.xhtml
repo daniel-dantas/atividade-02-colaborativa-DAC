@@ -8,11 +8,12 @@
     <h1>Cadastrar Cliente</h1>
     <h:form>
         <h:outputLabel for="nome" value="Nome" />
-        <h:inputText value="#{ClienteController.cliente.nome}" id="nome"/>
+        <h:inputText value="#{clienteController.cliente.nome}" id="nome"/>
         <h:outputLabel for="cpf" value="Cpf" />
-        <h:inputText value="#{ClienteController.cliente.cpf}" id="cpf" />
+        <h:inputText value="#{clienteController.cliente.cpf}" id="cpf" />
         <h:commandButton id="cadastrar" styleClass="btn" value="Criar cliente" action="#{ClienteController.criarCliente()}"/>
-    </h:form>
     <h:commandLink class="btn" value="Listar Clientes" action="listar_clientes.xhtml?faces-redirect=true"/>
+    </h:form>
+
 </ui:composition>
 </html>

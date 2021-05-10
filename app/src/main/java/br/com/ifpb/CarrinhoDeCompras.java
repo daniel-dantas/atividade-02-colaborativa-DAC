@@ -1,9 +1,7 @@
 package br.com.ifpb;
 
-import br.com.ifpb.Venda;
 import br.com.ifpb.model.Cliente;
 import br.com.ifpb.model.Item;
-import br.com.ifpb.model.Produto;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;

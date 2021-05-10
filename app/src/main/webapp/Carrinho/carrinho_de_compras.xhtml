@@ -5,7 +5,38 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+<ui:composition >
+        <h1>Carrinho de Compras</h1>
+        <h:form>
+            <h:dataTable var="item" value="#{carrinhoController.todosOsProdutos}" class="striped highlight">
+                <h:column>
+                   <f:facet name="header">Produto</f:facet>
+                    #{item.produto}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Preço</f:facet>
+                    #{item.valor}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantidade</f:facet>
+                    #{item.quantidade}
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Excluir" action="#{carrinhoController.remover(item.produto)}" class="btn"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="-" action="#{carrinhoController.incrementar(item.produto)}" class="btn"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="+" action="#{carrinhoController.decrementar(item.produto)}" class="btn"/>
+                </h:column>
+            </h:dataTable>
+            <h:outputLabel value="Cliente" for="cliente"/>
+            <h:inputText id="cliente" value="#{carrinhoController.cliente}" />
+            <h:commandButton value="Comprar" action="#{carrinhoController.checkout}" class="btn"/>
+    <h:commandLink class="btn" value="Novo Produto" action="cadastro_produto.xhtml"/>
+    <h:commandLink class="btn" value="Listar Produtos" action="listagem_de_produto.xhtml"/>
+        </h:form>
+
+</ui:composition>
 </html>

@@ -72,23 +72,20 @@ public class ClienteDao {
                     ).executeQuery();
             while (result.next()) {
                 lista.add(
-                        criarCliente(result)
+                        setCliente(result)
                 );
             }
             return lista;
         } catch (SQLException ex) {
-//            Logger.getLogger(ClientesEmJDBC.class.getName()).log(Level.SEVERE,null,ex);
             return Collections.EMPTY_LIST;
         }
     }
 
 
-    private Cliente criarCliente(ResultSet result) throws SQLException {
+    private Cliente setCliente(ResultSet result) throws SQLException {
         String nome = result.getString("nome");
         String cpf = result.getString("cpf");
         int id = result.getInt("id");
         return new Cliente(id,cpf,nome);
     }
-
-
 }

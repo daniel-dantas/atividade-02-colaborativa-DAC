@@ -13,7 +13,8 @@
         <h:outputLabel for="cpf" value="Cpf" />
         <h:inputText value="#{ClienteController.cliente.cpf}" id="cpf" />
         <h:commandButton id="editar" styleClass="btn" value="Editar cliente" action="#{ClienteController.editarCliente()}"/>
-    </h:form>
     <h:commandLink class="btn" value="Listar Clientes" action="listar_clientes.xhtml?faces-redirect=true"/>
+    </h:form>
+
 </ui:composition>
 </html>
