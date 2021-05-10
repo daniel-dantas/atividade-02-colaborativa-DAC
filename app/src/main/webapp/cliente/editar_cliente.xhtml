@@ -9,10 +9,10 @@
     <h1>Editar Cliente</h1>
     <h:form>
         <h:outputLabel for="nome" value="Nome" />
-        <h:inputText value="#{ClienteController.cliente.nome}" id="nome"/>
+        <h:inputText value="#{clienteController.cliente.nome}" id="nome"/>
         <h:outputLabel for="cpf" value="Cpf" />
-        <h:inputText value="#{ClienteController.cliente.cpf}" id="cpf" />
-        <h:commandButton id="editar" styleClass="btn" value="Editar cliente" action="#{ClienteController.editarCliente()}"/>
+        <h:inputText value="#{clienteController.cliente.cpf}" id="cpf" />
+        <h:commandButton id="editar" styleClass="btn" value="Editar cliente" action="#{clienteController.editarCliente()}"/>
     <h:commandLink class="btn" value="Listar Clientes" action="listar_clientes.xhtml?faces-redirect=true"/>
     </h:form>
 

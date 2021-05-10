@@ -11,7 +11,7 @@
         <h:inputText value="#{clienteController.cliente.nome}" id="nome"/>
         <h:outputLabel for="cpf" value="Cpf" />
         <h:inputText value="#{clienteController.cliente.cpf}" id="cpf" />
-        <h:commandButton id="cadastrar" styleClass="btn" value="Criar cliente" action="#{ClienteController.criarCliente()}"/>
+        <h:commandButton id="cadastrar" styleClass="btn" value="Criar cliente" action="#{clienteController.criarCliente()}"/>
     <h:commandLink class="btn" value="Listar Clientes" action="listar_clientes.xhtml?faces-redirect=true"/>
     </h:form>
 
